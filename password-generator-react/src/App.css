@@ -1,0 +1,339 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: grey;
+}
+
+.menu {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 5px;
+  background: #f2f2f2;
+  border-radius: 10px;
+}
+
+.menu a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  text-decoration: none;
+  color: #444;
+  background: transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.menu a:hover {
+  background: #e2e2e2;
+}
+
+.menu a.menu-activo {
+  background: #252525;
+  color: white;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 58px 20px 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 550px;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.11);
+}
+
+.card h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #252525;
+  margin-bottom: 28px;
+}
+
+.card h2 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 14px;
+}
+
+.password-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.password-input {
+  flex: 1;
+  height: 48px;
+  border: 1px solid #d9dce1;
+  border-radius: 8px;
+  padding: 0 15px;
+  font-size: 17px;
+  font-weight: 500;
+  outline: none;
+  background: #fafafa;
+  transition: border 0.2s ease;
+}
+
+.password-input:focus {
+  border-color: #777;
+}
+
+.copy-button {
+  height: 48px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 8px;
+  background: #252525;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.copy-button:hover {
+  background: #3a3a3a;
+}
+
+.copy-button:active {
+  transform: scale(0.97);
+}
+
+.slider-container {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.error {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #d93025;
+  min-height: 20px;
+  margin-bottom: 12px;
+}
+
+.slider-container label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.slider-container label span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 32px;
+  height: 28px;
+  padding: 0 8px;
+  background: #252525;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.slider {
+  width: 100%;
+  cursor: pointer;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 8px;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  background: #fafafa;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  transition: background 0.2s ease, border 0.2s ease, transform 0.2s ease;
+}
+
+.option:hover {
+  background: #f2f2f2;
+  border-color: #cacaca;
+  transform: translateY(-1px);
+}
+
+.option input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #252525;
+}
+
+.fuerza-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.fuerza {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 55px;
+  padding: 12px 8px;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  background: #fafafa;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.2s ease, border 0.2s ease, transform 0.2s ease;
+}
+
+.fuerza:hover {
+  background: #f2f2f2;
+  border-color: #cacaca;
+  transform: translateY(-1px);
+}
+
+.fuerza.activa {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: white;
+}
+
+.generate-button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 9px;
+  background: rgb(211, 255, 0);
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.generate-button:hover {
+  background: rgb(191, 255, 0);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.generate-button:active {
+  transform: scale(0.99);
+}
+
+.copiado {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4caf50;
+  white-space: nowrap;
+}
+
+.historial {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.password-guardada {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 14px;
+  background: #fafafa;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+}
+
+.password-guardada span {
+  font-size: 16px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.password-guardada button {
+  border: none;
+  border-radius: 7px;
+  background: #d93025;
+  color: white;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.password-guardada button:hover {
+  background: #b9261c;
+}
+
+.sin-passwords {
+  text-align: center;
+  color: #777;
+  font-size: 15px;
+}
+
+@media (max-width: 550px) {
+  .card {
+    padding: 22px;
+  }
+
+  .options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fuerza-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .password-row {
+    flex-direction: column;
+  }
+
+  .copy-button {
+    width: 100%;
+  }
+}
