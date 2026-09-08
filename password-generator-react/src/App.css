@@ -9,46 +9,12 @@ body {
   background: grey;
 }
 
-.menu {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 30px;
-  padding: 5px;
-  background: #f2f2f2;
-  border-radius: 10px;
-}
-
-.menu a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 42px;
-  text-decoration: none;
-  color: #444;
-  background: transparent;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.menu a:hover {
-  background: #e2e2e2;
-}
-
-.menu a.menu-activo {
-  background: #252525;
-  color: white;
-}
-
 main {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 58px 20px 20px;
+  padding: 58px 20px 40px;
 }
 
 .card {
@@ -126,9 +92,13 @@ main {
   transform: scale(0.97);
 }
 
-.slider-container {
-  width: 100%;
-  margin-bottom: 28px;
+.copiado {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4caf50;
+  white-space: nowrap;
 }
 
 .error {
@@ -138,6 +108,11 @@ main {
   color: #d93025;
   min-height: 20px;
   margin-bottom: 12px;
+}
+
+.slider-container {
+  width: 100%;
+  margin-bottom: 28px;
 }
 
 .slider-container label {
@@ -263,19 +238,18 @@ main {
   transform: scale(0.99);
 }
 
-.copiado {
-  display: flex;
-  align-items: center;
-  font-size: 13px;
-  font-weight: 600;
-  color: #4caf50;
-  white-space: nowrap;
-}
-
 .historial {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid #e1e1e1;
+}
+
+.historial h2 {
+  margin-bottom: 5px;
 }
 
 .password-guardada {
@@ -290,10 +264,13 @@ main {
 }
 
 .password-guardada span {
+  flex: 1;
+  min-width: 0;
   font-size: 16px;
   font-weight: 600;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .password-guardada button {
@@ -304,19 +281,32 @@ main {
   padding: 8px 14px;
   cursor: pointer;
   font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .password-guardada button:hover {
   background: #b9261c;
 }
 
+.password-guardada button:active {
+  transform: scale(0.97);
+}
+
 .sin-passwords {
   text-align: center;
   color: #777;
   font-size: 15px;
+  font-weight: 600;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #e1e1e1;
 }
 
 @media (max-width: 550px) {
+  main {
+    padding: 30px 15px;
+  }
+
   .card {
     padding: 22px;
   }
@@ -335,5 +325,9 @@ main {
 
   .copy-button {
     width: 100%;
+  }
+
+  .password-guardada span {
+    font-size: 14px;
   }
 }

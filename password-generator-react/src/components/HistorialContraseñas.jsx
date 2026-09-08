@@ -1,7 +1,7 @@
 function HistorialContraseñas(
-    { 
-        passwords, 
-        setPasswords 
+    {
+        passwords,
+        setPasswords
     }) {
 
     function borrarPassword(indice) {
@@ -18,8 +18,10 @@ function HistorialContraseñas(
     }
 
     return (
-        <>
-            <h1>Últimas Contraseñas</h1>
+        
+        <div className="historial">
+
+            <h2>Últimas Contraseñas</h2>
 
             {passwords.length === 0 && (
                 <h3 className="sin-passwords">
@@ -27,20 +29,19 @@ function HistorialContraseñas(
                 </h3>
             )}
 
-            <div className="historial">
-                {passwords.map((pass, i) => (
-                    <div className="password-guardada" key={i}>
+            {passwords.map((pass, i) => (
+                <div className="password-guardada" key={i}>
 
-                        <span>{pass}</span>
+                    <span>{pass}</span>
 
-                        <button onClick={() => borrarPassword(i)}>
-                            Borrar
-                        </button>
+                    <button onClick={() => borrarPassword(i)}>
+                        Borrar
+                    </button>
 
-                    </div>
-                ))}
-            </div>
-        </>
+                </div>
+            ))}
+        </div>
+
     )
 
 }

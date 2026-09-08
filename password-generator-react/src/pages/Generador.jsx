@@ -4,7 +4,7 @@ import Slider from '../components/Slider';
 import InputContraseña from '../components/InputContraseña';
 import Fortaleza from '../components/Fortaleza';
 import BotonGenerar from '../components/BotonGenerar';
-import Nav from '../components/Nav';
+import HistorialContraseñas from '../components/HistorialContraseñas'
 
 function Generador() {
 
@@ -15,14 +15,15 @@ function Generador() {
     const [conSimbolos, setConSimbolos] = useState(false);
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const [puntos, setPuntos] = useState(null)
-    const [copiado, setCopiado] = useState(false)
+    const [puntos, setPuntos] = useState(null);
+    const [copiado, setCopiado] = useState(false);
+    const [passwords, setPasswords] = useState(
+        JSON.parse(localStorage.getItem("passwords")) || []
+    );
 
     return (
         <main>
             <section className="card">
-
-                <Nav/>
 
                 <InputContraseña
                     password={password}
@@ -55,7 +56,13 @@ function Generador() {
                     setPuntos={setPuntos}
                     setError={setError}
                     setPassword={setPassword}
+                    setPasswords={setPasswords}
                     longitud={longitud}
+                />
+
+                <HistorialContraseñas
+                    passwords={passwords}
+                    setPasswords={setPasswords}
                 />
 
             </section>

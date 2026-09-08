@@ -7,6 +7,7 @@ function BotonGenerar(
         setPuntos,
         setError,
         setPassword,
+        setPasswords,
         longitud,
 
      }){
@@ -72,6 +73,8 @@ function BotonGenerar(
         historial = historial.slice(0, 5)
 
         localStorage.setItem("passwords", JSON.stringify(historial))
+
+        setPasswords(historial)
     }
 
     return (
