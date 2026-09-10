@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 60vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+.tarjeta {
+  width: 500px;
+  min-height: 600px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  transition: 0.3s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+header button {
+  padding: 10px 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #333;
+  color: white;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+header button:hover {
+  background-color: #555;
+}
+
+
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.carta {
+  width: 80px;
+  height: 80px;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: #333;
+  color: white;
+
+  font-size: 24px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+
+footer {
+  display: flex;
+  justify-content: space-around;
+
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+footer span {
+  font-size: 14px;
+  color: #777;
+}
+
+footer strong {
+  font-size: 18px;
+  color: #222;
+}
+
+.movimientos {
+  text-align: center;
+}
+
+.victoria {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.victoria h1 {
+  margin-bottom: 25px;
+  font-size: 32px;
+}
+
+.victoria p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.victoria button {
+  margin-top: 25px;
+  padding: 10px 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #333;
+  color: white;
+
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.victoria button:hover {
+  background-color: #555;
+}
