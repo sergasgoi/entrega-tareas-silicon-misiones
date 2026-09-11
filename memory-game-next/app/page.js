@@ -4,23 +4,47 @@ import { useEffect, useState } from "react";
 export default function Home() {
 
 
-  const [tablero, setTablero] = useState(crearTablero);
+  const [tamaño, setTamaño] = useState(4);
+  const [tablero, setTablero] = useState(() => crearTablero(4));
   const [evaluando, setEvaluando] = useState(false);
   const [movimientos, setMovimientos] = useState(0);
   const [segundos, setSegundos] = useState(0);
   const [jugando, setJugando] = useState(false);
 
-  function nuevaPartida() {
-    setTablero(crearTablero());
+  function cambiarTamaño() {
+
+    const nuevoTamaño = tamaño === 4 ? 6 : 4;
+
+    setTamaño(nuevoTamaño);
+    setTablero(crearTablero(nuevoTamaño));
+
     setMovimientos(0);
     setSegundos(0);
     setJugando(false);
     setEvaluando(false);
   }
 
-  function crearTablero() {
+  function nuevaPartida() {
+  setTablero(crearTablero(tamaño));
+  setMovimientos(0);
+  setSegundos(0);
+  setJugando(false);
+  setEvaluando(false);
+}
 
-    const valores = [1, 2, 3, 4, 5, 6, 7, 8];
+  function crearTablero(tamañoTablero) {
+
+    const valores8 = [
+      1, 2, 3, 4, 5, 6, 7, 8
+    ];
+
+    const valores18 = [
+      1, 2, 3, 4, 5, 6,
+      7, 8, 9, 10, 11, 12,
+      13, 14, 15, 16, 17, 18
+    ];
+
+    const valores = tamañoTablero === 4 ? valores8 : valores18;
 
     const duplicados = [...valores, ...valores];
 
@@ -195,15 +219,22 @@ export default function Home() {
       <header>
         <h1>Memory</h1>
 
-        <button  onClick={nuevaPartida}>
-          Nueva Partida
-        </button>
+        <div className="botones">
+          <button onClick={nuevaPartida}>
+            Nueva Partida
+          </button>
+
+          <button onClick={cambiarTamaño}>
+            {tamaño === 4 ? "6 x 6" : "4 x 4"}
+          </button>
+        </div>
       </header>
 
-      <section className="tablero">
+      <section className={`tablero tablero-${tamaño}`}>
         {tablero.map((carta) => (
           <button
-            className="carta"
+            className={`carta ${carta.dadaVuelta || carta.encontrada ? "girada" : ""
+              }`}
             key={carta.id}
             onClick={() => darVuelta(carta.id)}
           >
