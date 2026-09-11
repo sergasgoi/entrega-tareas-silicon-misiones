@@ -1,0 +1,270 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 70vh;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tarjeta {
+  width: 100%;
+  max-width: 420px;
+  padding: 24px;
+
+  background-color: white;
+  border-radius: 15px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  transition: 0.3s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 18px;
+  font-size: 32px;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+header button {
+  padding: 9px 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #333;
+  color: white;
+
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+header button:hover {
+  background-color: #555;
+}
+
+header button:focus,
+header button:focus-visible {
+  outline: none;
+}
+
+.tablero {
+  display: grid;
+  width: max-content;
+  margin: 28px auto;
+}
+
+.tablero-4 {
+  grid-template-columns: repeat(4, 65px);
+  gap: 20px;
+}
+
+.tablero-6 {
+  grid-template-columns: repeat(6, 45px);
+  gap: 12px;
+}
+
+.carta {
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: #333;
+  color: white;
+
+  font-weight: bold;
+  cursor: pointer;
+
+  outline: none;
+
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.carta:focus,
+.carta:focus-visible,
+.carta:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.tablero-4 .carta {
+  width: 65px;
+  height: 65px;
+  font-size: 20px;
+}
+
+.tablero-6 .carta {
+  width: 45px;
+  height: 45px;
+  font-size: 15px;
+}
+
+.carta:hover {
+  transform: scale(1.04);
+}
+
+.carta.girada {
+  animation: girarCarta 0.4s ease;
+  background-color: #777;
+}
+
+@keyframes girarCarta {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  50% {
+    transform: rotateY(90deg);
+  }
+
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+
+  padding: 15px 10px 0;
+
+  border-top: 1px solid #ddd;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+footer span {
+  font-size: 14px;
+  color: #777;
+}
+
+footer strong {
+  font-size: 18px;
+  color: #222;
+}
+
+.tiempo {
+  text-align: center;
+}
+
+.movimientos {
+  text-align: center;
+}
+
+.victoria {
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.victoria h1 {
+  margin: 0 0 20px;
+  font-size: 30px;
+}
+
+.victoria p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.victoria button {
+  margin-top: 20px;
+  padding: 9px 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #333;
+  color: white;
+
+  font-size: 15px;
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.victoria button:hover {
+  background-color: #555;
+}
+
+.victoria button:focus,
+.victoria button:focus-visible {
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .tarjeta {
+    max-width: 360px;
+    padding: 18px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  .tablero-4 {
+    grid-template-columns: repeat(4, 55px);
+    gap: 15px;
+  }
+
+  .tablero-4 .carta {
+    width: 55px;
+    height: 55px;
+    font-size: 18px;
+  }
+
+  .tablero-6 {
+    grid-template-columns: repeat(6, 38px);
+    gap: 8px;
+  }
+
+  .tablero-6 .carta {
+    width: 38px;
+    height: 38px;
+    font-size: 13px;
+  }
+
+  footer {
+    padding: 15px 5px 0;
+  }
+}
