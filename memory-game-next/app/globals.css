@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  min-height: 60vh;
+  min-height: 70vh;
   padding: 20px;
 
   display: flex;
@@ -13,6 +13,10 @@ body {
 
   background-color: #f2f2f2;
   font-family: Arial, sans-serif;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .tarjeta {
@@ -31,7 +35,6 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
 }
-
 
 header {
   text-align: center;
@@ -68,6 +71,11 @@ header button:hover {
   background-color: #555;
 }
 
+header button:focus,
+header button:focus-visible {
+  outline: none;
+}
+
 .tablero {
   display: grid;
   width: max-content;
@@ -100,7 +108,16 @@ header button:hover {
   font-weight: bold;
   cursor: pointer;
 
+  outline: none;
+
   transition: transform 0.3s, background-color 0.3s;
+}
+
+.carta:focus,
+.carta:focus-visible,
+.carta:active {
+  outline: none;
+  box-shadow: none;
 }
 
 .tablero-4 .carta {
@@ -198,10 +215,17 @@ footer strong {
 
   font-size: 15px;
   cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 .victoria button:hover {
   background-color: #555;
+}
+
+.victoria button:focus,
+.victoria button:focus-visible {
+  outline: none;
 }
 
 @media (max-width: 480px) {
